@@ -3,6 +3,7 @@ require 'rails_helper'
 RSpec.describe Author, type: :model do
   it { should validate_presence_of(:given_name) }
   it { should validate_presence_of(:family_name) }
+  it { should have_many(:books) }
 
   it "should be invalid with 'nil' as given_name " do
     author = Author.new(given_name: nil, family_name: 'Mendoza')
